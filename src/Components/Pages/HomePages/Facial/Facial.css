@@ -1,0 +1,31 @@
+.main-facial-box{
+    background: #FFF8F5;
+}
+
+.facial-text .facial-title{
+    font-size: 50px;
+    font-weight: 600;
+    color: #2D2D2D;
+    margin-bottom: 30px;
+}
+
+.facial-text .facial-title span{
+    color: #F63E7B;
+}
+
+.facial-description{
+    color: #7F7B7A;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.facial-review h1{
+    font-size: 60px;
+    font-weight: 800;
+    color: #F63E7B;
+    margin-bottom: 30px;
+}
+.facial-review h4{
+    font-size: 18px;
+    font-weight: 600;
+}
