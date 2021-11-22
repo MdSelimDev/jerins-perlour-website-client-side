@@ -1,0 +1,37 @@
+.main-title{
+    font-size: 45px;
+    font-weight: 700;
+    color: #111430;
+}
+
+.main-title span{
+    color: #F63E7B;
+}
+
+.single-services{
+    transition: .3s;
+}
+
+.single-services img{
+    width: 70px;
+}
+
+.single-services:hover{
+    box-shadow: 5px 5px 25px rgba(0,0,0,0.5);
+}
+
+.single-services .service-title{
+    font-size: 26px;
+    color: #111430;
+    font-weight: 700;
+}
+
+.single-services .service-price {
+    color: #F63E7B;
+    font-weight: 700;
+}
+
+.service-descrip{
+    color: #4d4d4dd3;
+    font-weight: 500;
+}

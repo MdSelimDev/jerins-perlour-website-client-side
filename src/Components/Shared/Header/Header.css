@@ -1,0 +1,22 @@
+.header-logo{
+    width: 130px;
+}
+
+.header-menu-list{
+    color: #474747 !important;
+    font-weight: 500;
+}
+
+.log-in-btn{
+    background: #F63E7B;
+    padding: 8px 40px !important;
+    border-radius: 6px;
+    color: #fff !important;
+    font-weight: 600;
+}
+
+@media (max-width:600px) {
+    .header-logo{
+        width: 70px;
+    }
+}
