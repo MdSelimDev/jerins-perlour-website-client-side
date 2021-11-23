@@ -64,7 +64,7 @@ const HomeContact = () => {
                 className="w-100 contact-textarea"
                 cols="15"
                 rows="5"
-                placeholder="Write your message contact-textarea"
+                placeholder="Write your message"
                 {...register("description")}
                 required
               ></textarea>

@@ -1,0 +1,35 @@
+ul {
+  margin-left: 0;
+  padding-left: 0;
+}
+
+ul li {
+  list-style: none;
+}
+.footer-main-box {
+  background: #f63e7b;
+  color: #fff;
+}
+
+.footer-social ul li {
+  display: inline-block;
+}
+.footer-social ul li i {
+  margin-right: 15px;
+  font-size: 25px;
+  display: inline-block;
+}
+.footer-social ul li i:hover {
+  cursor: pointer;
+}
+.footer-title {
+  font-size: 25px;
+  font-weight: 500;
+  margin-bottom: 22px;
+}
+
+.footer-link ul li {
+  font-size: 16px;
+  font-weight: 400;
+  margin: 10px 0;
+}
