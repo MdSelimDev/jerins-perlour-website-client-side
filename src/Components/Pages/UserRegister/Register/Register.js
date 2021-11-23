@@ -1,21 +1,24 @@
 import React from "react";
 import { FloatingLabel, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../../../Shared/Header/Header";
 import Google from "../../../image/google.png";
-import useFirebase from "../../../Shared/useFirebase/useFirebase";
+import FullPageLoader from "../../../Shared/FullPageLoader/FullPageLoader";
+import UseAuth from "../../../Shared/context/UseAuth/UseAuth";
 
 const Register = () => {
   const { register, reset, handleSubmit } = useForm();
 
-  const { HandleGoogleSignIn, HandleRegisterUser, error, setError } =
-    useFirebase();
+  const { HandleGoogleSignIn, HandleRegisterUser, error, setError, loader } =
+    UseAuth();
+
+  const navigate = useNavigate();
 
   const HandleLogInFormSubmit = (d) => {
     if (d.password1.length >= 6 && d.password2.length >= 6) {
       if (d.password1 === d.password2) {
-        HandleRegisterUser(d.email, d.password2, d.name);
+        HandleRegisterUser(d.email, d.password2, d.name, navigate);
         reset();
       } else {
         setError("Password did not match try again");
@@ -109,6 +112,7 @@ const Register = () => {
           <h4 className="text-center">Continue With Google</h4>
         </div>
       </div>
+      {loader && <FullPageLoader />}
     </div>
   );
 };

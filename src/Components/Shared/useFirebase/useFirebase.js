@@ -36,7 +36,7 @@ const useFirebase = () => {
       .finally(() => setLoader(false));
   };
 
-  const HandleRegisterUser = (email, password, name) => {
+  const HandleRegisterUser = (email, password, name, navigate) => {
     setLoader(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
@@ -50,6 +50,7 @@ const useFirebase = () => {
           .catch((error) => {
             console.log(error.message);
           });
+        navigate("/");
       })
       .catch((error) => {
         setError(error.message);
@@ -58,11 +59,12 @@ const useFirebase = () => {
       .finally(() => setLoader(false));
   };
 
-  const HandleLogInEmailAndPassword = (email, password) => {
+  const HandleLogInEmailAndPassword = (email, password, navigate) => {
     setLoader(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         const user = userCredential.user;
+        navigate("/");
       })
       .catch((error) => {
         setError(error.message);

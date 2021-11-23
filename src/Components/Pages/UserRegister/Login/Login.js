@@ -1,20 +1,23 @@
 import React from "react";
 import { FloatingLabel, Form } from "react-bootstrap";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Header from "../../../Shared/Header/Header";
 import Google from "../../../image/google.png";
+import UseAuth from "../../../Shared/context/UseAuth/UseAuth";
+import FullPageLoader from "../../../Shared/FullPageLoader/FullPageLoader";
 import "./Login.css";
-import useFirebase from "../../../Shared/useFirebase/useFirebase";
 
 const Login = () => {
   const { register, reset, handleSubmit } = useForm();
 
-  const { HandleGoogleSignIn, HandleLogInEmailAndPassword } = useFirebase();
+  const { HandleGoogleSignIn, HandleLogInEmailAndPassword, loader } = UseAuth();
+
+  const navigate = useNavigate();
 
   const HandleLogInFormSubmit = (d) => {
     console.log(d);
-    HandleLogInEmailAndPassword(d.email, d.password);
+    HandleLogInEmailAndPassword(d.email, d.password, navigate);
     reset();
   };
 
@@ -69,6 +72,7 @@ const Login = () => {
           <h4 className="text-center">Continue With Google</h4>
         </div>
       </div>
+      {loader && <FullPageLoader />}
     </div>
   );
 };
