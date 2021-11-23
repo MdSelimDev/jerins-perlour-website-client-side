@@ -4,20 +4,36 @@ import { useForm } from "react-hook-form";
 import { Link } from "react-router-dom";
 import Header from "../../../Shared/Header/Header";
 import Google from "../../../image/google.png";
+import useFirebase from "../../../Shared/useFirebase/useFirebase";
 
 const Register = () => {
   const { register, reset, handleSubmit } = useForm();
 
+  const { HandleGoogleSignIn, HandleRegisterUser, error, setError } =
+    useFirebase();
+
   const HandleLogInFormSubmit = (d) => {
-    console.log(d);
-    reset();
+    if (d.password1.length >= 6 && d.password2.length >= 6) {
+      if (d.password1 === d.password2) {
+        HandleRegisterUser(d.email, d.password2, d.name);
+        reset();
+      } else {
+        setError("Password did not match try again");
+      }
+    } else {
+      setError("Please Give Atleast 6 Character Passoword");
+    }
+  };
+
+  const HandleErrorRemove = () => {
+    setError("");
   };
 
   return (
     <div className="pb-5">
       <Header />
       <h1 className="main-title text-center py-5 fw-bold">Create An Account</h1>
-      <div className="log-in-form-box">
+      <div onBlur={HandleErrorRemove} className="log-in-form-box">
         <form onSubmit={handleSubmit(HandleLogInFormSubmit)}>
           <div className="input-form-border">
             <FloatingLabel controlId="floatingInput" label="Enter your Name">
@@ -72,6 +88,7 @@ const Register = () => {
               />
             </FloatingLabel>
           </div>
+          <p className="text-danger">{error}</p>
           <input
             type="submit"
             value="Create An Account"
@@ -84,7 +101,10 @@ const Register = () => {
             Login
           </Link>
         </p>
-        <div className="d-flex align-items-center google-button">
+        <div
+          onClick={HandleGoogleSignIn}
+          className="d-flex align-items-center google-button"
+        >
           <img className="google-img" src={Google} alt="" />
           <h4 className="text-center">Continue With Google</h4>
         </div>

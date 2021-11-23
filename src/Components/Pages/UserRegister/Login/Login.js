@@ -5,12 +5,16 @@ import { Link } from "react-router-dom";
 import Header from "../../../Shared/Header/Header";
 import Google from "../../../image/google.png";
 import "./Login.css";
+import useFirebase from "../../../Shared/useFirebase/useFirebase";
 
 const Login = () => {
   const { register, reset, handleSubmit } = useForm();
 
+  const { HandleGoogleSignIn, HandleLogInEmailAndPassword } = useFirebase();
+
   const HandleLogInFormSubmit = (d) => {
     console.log(d);
+    HandleLogInEmailAndPassword(d.email, d.password);
     reset();
   };
 
@@ -57,7 +61,10 @@ const Login = () => {
             Create An Account
           </Link>
         </p>
-        <div className="d-flex align-items-center google-button">
+        <div
+          onClick={HandleGoogleSignIn}
+          className="d-flex align-items-center google-button"
+        >
           <img className="google-img" src={Google} alt="" />
           <h4 className="text-center">Continue With Google</h4>
         </div>

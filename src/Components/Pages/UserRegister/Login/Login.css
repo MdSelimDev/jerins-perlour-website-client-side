@@ -43,6 +43,10 @@
   margin: 40px auto;
 }
 
+.google-button:hover {
+  background: #c4c4c4;
+}
+
 .google-button h4 {
   font-size: 20px;
   color: #000000;
