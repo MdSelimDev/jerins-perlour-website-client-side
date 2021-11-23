@@ -10,10 +10,13 @@ const Footer = () => {
           <Row>
             <Col lg={3} sm={12}>
               <div className="footer-location">
-                <p>
+                <p className="text-start">
                   <i className="fas fa-map-marker-alt me-2"></i>
-                  H#1200,(19th,floor),Road #22,Mirpur
-                  Dohs,Mahakhali,Dhaka,Bangladesh.
+                  H#1200,(19th,floor),
+                  <br />
+                  Road #22,Mirpur Dohs,Mahakhali,
+                  <br />
+                  Dhaka,Bangladesh.
                 </p>
               </div>
             </Col>
