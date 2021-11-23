@@ -1,0 +1,16 @@
+.testi-img {
+  width: 70px;
+}
+.testi-name {
+  font-size: 20px;
+}
+.testi-address {
+  font-size: 14px;
+}
+.main-testi-box {
+  transition: 0.3s;
+}
+
+.main-testi-box:hover {
+  box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.2);
+}

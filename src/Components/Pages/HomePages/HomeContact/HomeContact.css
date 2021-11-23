@@ -1,0 +1,19 @@
+.contact-form-main {
+  background: #fff8f5;
+}
+.contact-form-box {
+  width: 40%;
+  margin: 0 auto;
+}
+.contact-input,
+.contact-textarea {
+  padding: 12px 15px;
+  margin: 15px 0;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  color: #888888;
+}
+.contact-textarea {
+  resize: none;
+}
