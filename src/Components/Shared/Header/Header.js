@@ -29,6 +29,9 @@ const Header = () => {
             <Nav.Link as={Link} className="header-menu-list" to="/">
               Contact Us
             </Nav.Link>
+            <Nav.Link as={Link} className="header-menu-list" to="/dashboard">
+              Dashboard
+            </Nav.Link>
             {user.email && (
               <Nav.Link className="header-menu-list">
                 {user.displayName}
