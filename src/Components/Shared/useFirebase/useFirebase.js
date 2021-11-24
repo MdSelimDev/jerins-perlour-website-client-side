@@ -10,6 +10,7 @@ import {
   signInWithEmailAndPassword,
 } from "firebase/auth";
 import initializeAuthentication from "../../FirebaseConfig/Firebase.initialize";
+import axios from "axios";
 
 initializeAuthentication();
 
@@ -17,6 +18,7 @@ const useFirebase = () => {
   const [user, setUser] = useState({});
   const [error, setError] = useState("");
   const [loader, setLoader] = useState(true);
+  const [service, setService] = useState([]);
 
   const auth = getAuth();
 
@@ -98,6 +100,17 @@ const useFirebase = () => {
       .finally(() => setLoader(false));
   };
 
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/service")
+      .then((result) => {
+        setService(result.data);
+      })
+      .catch((error) => {
+        console.log(error.message, error.code);
+      });
+  }, []);
+
   console.log(user);
 
   return {
@@ -109,6 +122,7 @@ const useFirebase = () => {
     HandleLogOut,
     HandleLogInEmailAndPassword,
     loader,
+    service,
   };
 };
 
