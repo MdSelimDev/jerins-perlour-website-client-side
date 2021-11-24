@@ -1,0 +1,18 @@
+.bookservice-form-box input {
+  width: 100%;
+  padding: 5px 10px;
+  margin: 8px 0;
+  border-radius: 5px;
+  outline: 0;
+  border: 1.5px solid #111430;
+  color: #111430;
+  font-weight: 500;
+}
+.bookservice-form-box input:focus {
+  border-color: #f63e7b;
+}
+.all-head-title {
+  font-size: 45px;
+  font-weight: 600;
+  color: #111430;
+}

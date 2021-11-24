@@ -3,3 +3,22 @@
   height: 100vh;
   border-radius: 10px 0 0 0;
 }
+.dashboard-list {
+  padding: 12px 0px;
+}
+.dashboard-list a {
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 500;
+  color: #878787;
+}
+.dashboard-list a:hover {
+  color: #f63e7b;
+}
+
+.dashboard-list i {
+  margin-right: 10px;
+}
+.dashboard-list-main {
+  padding: 0 55px;
+}

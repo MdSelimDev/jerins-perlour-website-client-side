@@ -6,7 +6,7 @@ const FullPageLoader = () => {
   return (
     <div className="loader-container">
       <div className="loader">
-        <Spinner animation="border" variant="info" />
+        <Spinner animation="border" variant="danger" />
       </div>
     </div>
   );

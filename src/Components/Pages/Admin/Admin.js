@@ -18,27 +18,41 @@ const Admin = () => {
       <div className="dashboard-main-box">
         <Row>
           <Col lg={2}>
-            <div>
+            <div className="dashboard-list-main">
               <div className="dashboard-list">
-                <Link to="book">Book</Link>
+                <Link to="book">
+                  <i className="fas fa-shopping-cart"></i> Book
+                </Link>
               </div>
               <div className="dashboard-list">
-                <Link to="bookinglist">Booking List</Link>
+                <Link to="bookinglist">
+                  <i className="fas fa-hdd"></i> Booking List
+                </Link>
               </div>
               <div className="dashboard-list">
-                <Link to="review">Review</Link>
+                <Link to="review">
+                  <i className="fas fa-comment-dots"></i> Review
+                </Link>
               </div>
               <div className="dashboard-list">
-                <Link to="orderlist">Order List</Link>
+                <Link to="orderlist">
+                  <i className="fas fa-list-alt"></i> Order List
+                </Link>
               </div>
               <div className="dashboard-list">
-                <Link to="addservice">Add Service</Link>
+                <Link to="addservice">
+                  <i className="fas fa-plus"></i> Add Service
+                </Link>
               </div>
               <div className="dashboard-list">
-                <Link to="makeadmin">Make Admin</Link>
+                <Link to="makeadmin">
+                  <i className="fas fa-user-plus"></i> Make Admin
+                </Link>
               </div>
               <div className="dashboard-list">
-                <Link to="manageservice">Manage Service</Link>
+                <Link to="manageservice">
+                  <i className="fas fa-th-large"></i> Manage Service
+                </Link>
               </div>
             </div>
           </Col>
@@ -46,7 +60,9 @@ const Admin = () => {
             <div>
               <div className="router-item">
                 <Routes>
+                  <Route path="dashboard" element={<Book />} />
                   <Route path="book" element={<Book />} />
+
                   <Route path="bookinglist" element={<BookingList />} />
                   <Route path="review" element={<Review />} />
                   <Route path="orderlist" element={<OrderList />} />

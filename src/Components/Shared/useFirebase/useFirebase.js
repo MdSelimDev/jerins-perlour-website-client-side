@@ -27,10 +27,7 @@ const useFirebase = () => {
   const HandleGoogleSignIn = () => {
     setLoader(true);
     signInWithPopup(auth, googleProvider)
-      .then((result) => {
-        setUser(result.user);
-        console.log(result.user);
-      })
+      .then((result) => {})
       .catch((error) => {
         setError(error.message);
         console.log(error.message, error.code);
@@ -42,7 +39,6 @@ const useFirebase = () => {
     setLoader(true);
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
         const newUser = { email, displayName: name };
         setUser(newUser);
         updateProfile(auth.currentUser, {
@@ -65,7 +61,6 @@ const useFirebase = () => {
     setLoader(true);
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-        const user = userCredential.user;
         navigate("/");
       })
       .catch((error) => {
@@ -78,7 +73,6 @@ const useFirebase = () => {
   };
 
   useEffect(() => {
-    setLoader(true);
     const unsubscribed = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
@@ -101,6 +95,7 @@ const useFirebase = () => {
   };
 
   useEffect(() => {
+    setLoader(true);
     axios
       .get("http://localhost:5000/service")
       .then((result) => {
@@ -108,10 +103,9 @@ const useFirebase = () => {
       })
       .catch((error) => {
         console.log(error.message, error.code);
-      });
+      })
+      .finally(() => setLoader(false));
   }, []);
-
-  console.log(user);
 
   return {
     HandleGoogleSignIn,
