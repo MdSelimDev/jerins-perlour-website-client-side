@@ -1,6 +1,6 @@
 .router-item {
   background: rgba(221, 221, 221, 0.76);
-  height: 100vh;
+  min-height: 100vh;
   border-radius: 10px 0 0 0;
 }
 .dashboard-list {
@@ -21,4 +21,5 @@
 }
 .dashboard-list-main {
   padding: 0 55px;
+  z-index: 1000px;
 }

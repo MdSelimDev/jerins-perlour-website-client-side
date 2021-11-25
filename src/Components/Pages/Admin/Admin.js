@@ -18,7 +18,7 @@ const Admin = () => {
       <div className="dashboard-main-box">
         <Row>
           <Col lg={2}>
-            <div className="dashboard-list-main">
+            <div className="dashboard-list-main position-fixed">
               <div className="dashboard-list">
                 <Link to="book">
                   <i className="fas fa-shopping-cart"></i> Book

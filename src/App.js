@@ -29,7 +29,14 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/dashboard/*" element={<Admin />} />
+          <Route
+            path="/dashboard/*"
+            element={
+              <PrivateRoute>
+                <Admin />
+              </PrivateRoute>
+            }
+          />
           <Route path="/*" element={<Notfound />} />
         </Routes>
         <Footer />

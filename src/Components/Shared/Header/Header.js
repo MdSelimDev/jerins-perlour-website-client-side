@@ -9,7 +9,7 @@ const Header = () => {
   const { user, HandleLogOut } = useFirebase();
 
   return (
-    <Navbar collapseOnSelect expand="lg">
+    <Navbar className="sticky-top bg-white" collapseOnSelect expand="lg">
       <Container>
         <Navbar.Brand as={Link} to="/">
           <img className="header-logo" src={headerLogo} alt="" />
