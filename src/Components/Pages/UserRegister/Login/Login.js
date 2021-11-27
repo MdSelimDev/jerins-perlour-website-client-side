@@ -11,7 +11,13 @@ import "./Login.css";
 const Login = () => {
   const { register, reset, handleSubmit } = useForm();
 
-  const { HandleGoogleSignIn, HandleLogInEmailAndPassword, loader } = UseAuth();
+  const {
+    HandleGoogleSignIn,
+    HandleLogInEmailAndPassword,
+    setError,
+    loader,
+    error,
+  } = UseAuth();
 
   const navigate = useNavigate();
 
@@ -21,11 +27,15 @@ const Login = () => {
     reset();
   };
 
+  const HandleErrorRemove = () => {
+    setError("");
+  };
+
   return (
     <div className="pb-5">
       <Header />
       <h1 className="main-title text-center py-5 fw-bold">Login Here</h1>
-      <div className="log-in-form-box">
+      <div onBlur={HandleErrorRemove} className="log-in-form-box">
         <form onSubmit={handleSubmit(HandleLogInFormSubmit)}>
           <div className="input-form-border">
             <FloatingLabel controlId="floatingInput" label="Enter your email">
@@ -52,6 +62,7 @@ const Login = () => {
               />
             </FloatingLabel>
           </div>
+          <p className="py-2 text-danger">{error}</p>
           <input
             type="submit"
             value="Login"
