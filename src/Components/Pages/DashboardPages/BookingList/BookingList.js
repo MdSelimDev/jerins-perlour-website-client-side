@@ -11,7 +11,9 @@ const BookingList = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/order/email?email=${user?.email}`)
+      .get(
+        `https://polar-meadow-40946.herokuapp.com/order/email?email=${user?.email}`
+      )
       .then((resutl) => {
         setOrder(resutl.data);
       });

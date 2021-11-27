@@ -1,6 +1,6 @@
 import React from "react";
 import { Col } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import "./HomeService.css";
 
 const HomeService = ({ service }) => {
@@ -13,9 +13,10 @@ const HomeService = ({ service }) => {
         <h2 className="service-title pt-4 pb-2">{title}</h2>
         <h3 className="service-price py-2">${price}</h3>
         <p className="service-descrip">{description}</p>
-        <Link className="buy-now-btn" to={`${_id}`}>
+        <Link className="buy-now-btn" to={`services/${_id}`}>
           Book Now <i className="fas fa-angle-right ms-2"></i>
         </Link>
+        <Outlet />
       </div>
     </Col>
   );

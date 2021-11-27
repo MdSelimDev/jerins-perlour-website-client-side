@@ -12,13 +12,15 @@ const SingleBooking = ({ data, order, setOrder }) => {
       confirmButtonText: "Delete Order",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:5000/order/${id}`).then((result) => {
-          if (result.data.deletedCount) {
-            Swal.fire("Deleted!", "Order Succesfully", "success");
-            const newOrder = order.filter((datas) => id !== datas._id);
-            setOrder(newOrder);
-          }
-        });
+        axios
+          .delete(`https://polar-meadow-40946.herokuapp.com/order/${id}`)
+          .then((result) => {
+            if (result.data.deletedCount) {
+              Swal.fire("Deleted!", "Order Succesfully", "success");
+              const newOrder = order.filter((datas) => id !== datas._id);
+              setOrder(newOrder);
+            }
+          });
       } else if (result.isDenied) {
         Swal.fire("Order", "Can't Delete . Thanks", "info");
       }

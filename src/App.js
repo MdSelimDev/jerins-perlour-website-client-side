@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Admin from "./Components/Pages/Admin/Admin";
 import BookService from "./Components/Pages/BookService/BookService";
 import Home from "./Components/Pages/HomePages/Home/Home";
@@ -21,14 +21,16 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/services" element={<Services />} />
+
           <Route
-            path=":id"
+            path="/services/:id"
             element={
               <PrivateRoute>
                 <BookService />
               </PrivateRoute>
             }
           />
+
           <Route
             path="/dashboard/*"
             element={
@@ -37,7 +39,8 @@ function App() {
               </PrivateRoute>
             }
           />
-          <Route path="/*" element={<Notfound />} />
+          <Route path="/404" element={<Notfound />} />
+          <Route path="*" element={<Navigate replace to="/404" />} />
         </Routes>
         <Footer />
       </BrowserRouter>

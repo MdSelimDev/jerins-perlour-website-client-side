@@ -10,7 +10,7 @@ const PrivateRoute = ({ children, ...rest }) => {
   if (loader) {
     return <FullPageLoader />;
   }
-  if (user.email) {
+  if (user?.email) {
     return children;
   }
   return <Navigate to="/login" state={{ from: location }} />;

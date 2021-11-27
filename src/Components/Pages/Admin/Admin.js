@@ -60,9 +60,8 @@ const Admin = () => {
             <div>
               <div className="router-item">
                 <Routes>
-                  <Route path="dashboard" element={<Book />} />
+                  {/* <Route path="dashboard" element={<Book />} /> */}
                   <Route path="book" element={<Book />} />
-
                   <Route path="bookinglist" element={<BookingList />} />
                   <Route path="review" element={<Review />} />
                   <Route path="orderlist" element={<OrderList />} />

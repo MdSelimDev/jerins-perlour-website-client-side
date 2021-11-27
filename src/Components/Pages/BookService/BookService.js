@@ -18,25 +18,29 @@ const BookService = () => {
   const { user } = UseAuth();
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/service/${id}`).then((result) => {
-      setService(result.data);
-    });
+    axios
+      .get(`https://polar-meadow-40946.herokuapp.com/service/${id}`)
+      .then((result) => {
+        setService(result.data);
+      });
   }, [id]);
 
   const HandleSubmitBooking = (d) => {
     console.log(d);
     d.orderdata = service;
-    axios.post("http://localhost:5000/order", d).then((result) => {
-      if (result.data.insertedId) {
-        Swal.fire({
-          title: "Successfully",
-          text: "Order Submited",
-          icon: "success",
-        });
-        navigate("/dashboard/bookinglist");
-        reset();
-      }
-    });
+    axios
+      .post("https://polar-meadow-40946.herokuapp.com/order", d)
+      .then((result) => {
+        if (result.data.insertedId) {
+          Swal.fire({
+            title: "Successfully",
+            text: "Order Submited",
+            icon: "success",
+          });
+          navigate("/dashboard/bookinglist");
+          reset();
+        }
+      });
   };
 
   return (

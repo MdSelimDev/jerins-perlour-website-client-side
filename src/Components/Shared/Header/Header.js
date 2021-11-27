@@ -29,7 +29,11 @@ const Header = () => {
             <Nav.Link as={Link} className="header-menu-list" to="/">
               Contact Us
             </Nav.Link>
-            <Nav.Link as={Link} className="header-menu-list" to="/dashboard">
+            <Nav.Link
+              as={Link}
+              className="header-menu-list"
+              to="/dashboard/bookinglist"
+            >
               Dashboard
             </Nav.Link>
             {user.email && (
