@@ -13,7 +13,7 @@ const SingleBooking = ({ data, order, setOrder }) => {
     }).then((result) => {
       if (result.isConfirmed) {
         axios
-          .delete(`https://polar-meadow-40946.herokuapp.com/order/${id}`)
+          .delete(`https://jerins-perlour-server.up.railway.app/order/${id}`)
           .then((result) => {
             if (result.data.deletedCount) {
               Swal.fire("Deleted!", "Order Succesfully", "success");

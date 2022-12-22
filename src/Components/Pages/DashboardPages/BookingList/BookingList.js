@@ -12,7 +12,7 @@ const BookingList = () => {
   useEffect(() => {
     axios
       .get(
-        `https://polar-meadow-40946.herokuapp.com/order/email?email=${user?.email}`
+        `https://jerins-perlour-server.up.railway.app/order/email?email=${user?.email}`
       )
       .then((resutl) => {
         setOrder(resutl.data);

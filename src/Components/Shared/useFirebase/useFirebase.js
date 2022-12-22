@@ -97,7 +97,7 @@ const useFirebase = () => {
   useEffect(() => {
     setLoader(true);
     axios
-      .get("https://polar-meadow-40946.herokuapp.com/service")
+      .get("https://jerins-perlour-server.up.railway.app/service")
       .then((result) => {
         setService(result.data);
       })

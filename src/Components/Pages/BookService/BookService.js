@@ -19,7 +19,7 @@ const BookService = () => {
 
   useEffect(() => {
     axios
-      .get(`https://polar-meadow-40946.herokuapp.com/service/${id}`)
+      .get(`https://jerins-perlour-server.up.railway.app/service/${id}`)
       .then((result) => {
         setService(result.data);
       });
@@ -29,7 +29,7 @@ const BookService = () => {
     console.log(d);
     d.orderdata = service;
     axios
-      .post("https://polar-meadow-40946.herokuapp.com/order", d)
+      .post("https://jerins-perlour-server.up.railway.app/order", d)
       .then((result) => {
         if (result.data.insertedId) {
           Swal.fire({
